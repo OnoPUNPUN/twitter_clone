@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:twitter_clone/features/auth/view/login_view.dart';
+import 'package:twitter_clone/routes.dart';
 import 'package:twitter_clone/theme/app_theme.dart';
+
+import 'features/auth/view/signup_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.theme,
-      home: LoginView(),
+      home: SignupView(),
+      // initialRoute: SignupView.name,
+      onGenerateRoute: onGenerateRoute,
     );
   }
 }

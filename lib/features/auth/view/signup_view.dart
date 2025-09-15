@@ -1,22 +1,22 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:twitter_clone/features/auth/view/signup_view.dart';
-import '../../../constants/constants.dart';
-import 'package:twitter_clone/features/auth/widgets/auth_field.dart';
-import 'package:twitter_clone/theme/pallete.dart';
+import 'package:twitter_clone/features/auth/view/login_view.dart';
 
 import '../../../common/rounded_small_button.dart';
+import '../../../constants/constants.dart';
+import '../../../theme/pallete.dart';
+import '../widgets/auth_field.dart';
 
-class LoginView extends StatefulWidget {
-  const LoginView({super.key});
+class SignupView extends StatefulWidget {
+  const SignupView({super.key});
 
-  static const String name = '/login-view';
+  static const String name = '/signUp-view';
 
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<SignupView> createState() => _SignupViewState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _SignupViewState extends State<SignupView> {
   final TextEditingController _emailTEController = TextEditingController();
   final TextEditingController _passwordTEController = TextEditingController();
   final appBar = UiConstants.appBar();
@@ -61,11 +61,11 @@ class _LoginViewState extends State<LoginView> {
                 // TextPan
                 RichText(
                   text: TextSpan(
-                    text: "Don't Have Account?",
+                    text: "Already Have Account?",
                     style: TextStyle(fontSize: 16),
                     children: [
                       TextSpan(
-                        text: " Sign Up",
+                        text: " Log In",
                         style: TextStyle(
                           color: Pallete.blueColor,
                           fontSize: 16,
@@ -74,7 +74,7 @@ class _LoginViewState extends State<LoginView> {
                           ..onTap = () {
                             Navigator.pushReplacementNamed(
                               context,
-                              SignupView.name,
+                              LoginView.name,
                             );
                           },
                       ),
